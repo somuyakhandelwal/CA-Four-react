@@ -4,14 +4,14 @@ body {
     text-align: center;
 }
 
-.body {
+.app-body {
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.heading {
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,7 +19,7 @@ body {
     gap: 50px;
 }
 
-.theme {
+.theme-button {
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 18px;
@@ -35,7 +35,7 @@ body {
     background-color: #333;
 }
 
-.questionCard {
+.quiz-container{
     background-color: #d2f8f8;
     padding: 30px;
     margin: 5% 10%;
@@ -43,7 +43,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.options {
+.quiz-option {
     border: 0;
     margin: 10px;
     padding: 10px 15px;
@@ -53,21 +53,21 @@ body {
     transition: background-color 0.3s ease, border 0.3s ease;
 }
 
-.options:hover {
+.quiz-option:hover {
     background-color: #50e2ff;
     border: 1px solid rgb(111, 255, 241);
 }
 
-.hlbox {
+.highlight-box {
     gap:30px;
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
 }
 
-.high-light,
-.remove-highlight,
-.restart {
+.apply-highlight,
+.reset-highlight,
+.restart-button {
     padding: 10px 20px;
     border-radius: 20px;
     font-weight: 700;
@@ -83,13 +83,4 @@ body {
 
 .removehighlight:hover {
     background-color: #5959FF;
-}
-
-.restartBTN {
-    background: linear-gradient(to right, #80f9e5, #59d8ff);
-    transition: background 0.3s ease;
-}
-
-.restart:hover {
-    background: linear-gradient(to right, #FF7D7D, #7D7DFF);
 }

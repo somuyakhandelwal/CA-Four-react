@@ -1,36 +1,34 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
-import QuestionBox from "./components/QuestionBox";
-
+import QuizBox from "./components/QuestionBox";
 
 function App() {
-  let [color,setcolor]=useState(true)
-  let[BackGroundColour,setBackGroundColour]=useState('')
-  let[textColor,settextColor]=useState('')
+  let [isLightTheme, setIsLightTheme] = useState(true);
+  let [backgroundColor, setBackgroundColor] = useState("");
+  let [textColor, setTextColor] = useState("");
 
-  
-  function backgroundchange(){
-    setcolor(!color)
-    let white='#FFFFFF'
-    let gray='#4d4d4d'
-    let black='#000000'
-    setBackGroundColour(color?gray:white)
-    settextColor(color?white:black)
-
+  function toggleTheme() {
+    setIsLightTheme(!isLightTheme);
+    let lightColor = "#FFFFFF";
+    let darkColor = "#4d4d4d";
+    let textColorLight = "#FFFFFF";
+    let textColorDark = "#000000";
+    setBackgroundColor(isLightTheme ? darkColor : lightColor);
+    setTextColor(isLightTheme ? textColorLight : textColorDark);
   }
 
   return (
-    <div style={{background: BackGroundColour }} className="body">
-      <div className="heading">
-        <h1 style={{color: textColor}}>Kalvium</h1>
-        <button onClick={backgroundchange} className="theme">{color?'Light':'Dark'}</button>
+    <div style={{ background: backgroundColor }} className="app-body">
+      <div className="header">
+        <h1 style={{ color: textColor }}>Kalvium</h1>
+        <button onClick={toggleTheme} className="theme-button">
+          {isLightTheme ? "Dark" : "Light"}
+        </button>
       </div>
-      <div className="questionCard">
-        <QuestionBox />
+      <div className="quiz-container">
+        <QuizBox />
       </div>
-      
     </div>
-
   );
 }
 
